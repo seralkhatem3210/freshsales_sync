@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- views/freshsales_views.xml -->
+<odoo>
+    <record id="view_freshsales_contact_list" model="ir.ui.view">
+        <field name="name">freshsales.contact.list</field>
+        <field name="model">freshsales.contact</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="email"/>
+                <field name="mobile_number"/>
+                <field name="city"/>
+                <field name="country"/>
+                <field name="customer_type"/>
+            </list>
+        </field>
+    </record>
+
+
+
+    <record id="view_freshsales_config_form" model="ir.ui.view">
+        <field name="name">freshsales.config.form</field>
+        <field name="model">freshsales.config</field>
+        <field name="arch" type="xml">
+            <form string="Freshsales Configuration">
+                <header>
+                        <button name="action_sync_contacts" type="object"
+                                string="🔄 Sync Contacts" class="btn-primary" 
+                            icon="fa-user"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="api_key"/>
+                        <field name="bundle_alias"/>
+                    </group>
+                    <footer>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+
+    <record id="action_freshsales_config" model="ir.actions.act_window">
+        <field name="name">Freshsales Config</field>
+        <field name="res_model">freshsales.config</field>
+        <field name="view_mode">list,form</field>
+        <field name="limit">80</field>
+    </record>
+
+    <record id="action_freshsales_contact" model="ir.actions.act_window">
+        <field name="name">Freshsales Contact</field>
+        <field name="res_model">freshsales.contact</field>
+        <field name="view_mode">list,form</field>
+        <field name="limit">80</field>
+    </record>
+ 
+
+    
+    <menuitem id="menu_freshsales_root" name="Freshsales"  sequence="3"        
+        web_icon="freshsales_sync,static/description/icon.png"/>
+    <menuitem id="menu_freshsales_config" name="Settings" parent="menu_freshsales_root" action="action_freshsales_config"/>
+    <menuitem id="menu_freshsales_contacts" name="Contacts" parent="menu_freshsales_root" action="action_freshsales_contact"/>
+    
+
+
+
+</odoo>
