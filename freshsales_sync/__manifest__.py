@@ -21,5 +21,5 @@
     },
     "installable": True,
     "application": True,
-    "license": "Odoo Proprietary License v1.0"
+    "license": "LGPL-3"
 }
