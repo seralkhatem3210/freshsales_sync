@@ -2,7 +2,7 @@
     "name": "Freshsale Sync",
     "version": "1.1",
     "category": "Tools",
-    "summary": "Sync freshsale users and channels to Odoo",
+    "summary": "Sync Freshsale users and channels to Odoo",
     "author": "Sirelkhatim",
     "depends": ["base", "contacts"],
     "data": [
@@ -10,12 +10,16 @@
         "views/freshsales_contact_views.xml",
         "security/ir.model.access.csv"
     ],
-    'images': ['static/description/banner.png', 'static/description/icon.png'],
-    'assets': {
-        'web.assets_backend': [
-            'freshsales_sync/static/src/**/*',
+    "images": [
+        "static/description/banner.png",
+        "static/description/icon.png"
+    ],
+    "assets": {
+        "web.assets_backend": [
+            "freshsales_sync/static/src/**/*",
         ],
     },
     "installable": True,
     "application": True,
+    "license": "Odoo Proprietary License v1.0"
 }
